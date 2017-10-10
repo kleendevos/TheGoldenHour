@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="be.vdab.thegoldenhour.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="false"
+
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background" />
+
+        <TextView
+            android:id="@+id/textGoldenHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Golden Hour will begin at time"
+            android:layout_marginBottom="107dp"
+            android:layout_above="@+id/date"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="20dp"
+            android:text="Today - date" />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_above="@+id/textGoldenHour"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
+
+</LinearLayout>

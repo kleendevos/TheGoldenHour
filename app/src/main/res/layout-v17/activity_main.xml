@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="be.vdab.thegoldenhour.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="false"
+
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background" />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="kk:mm"
+            android:format24Hour="kk:mm"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_marginTop="54dp" />
+
+
+        <TextView
+            android:id="@+id/CurrentLocationAbove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:layout_below="@+id/textGoldenHour"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/textGoldenHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Golden Hour will begin at time"
+            android:layout_below="@+id/textClock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:format12Hour="dd MMMM yyyy"
+            android:format24Hour="dd MMMM yyyy"
+            android:text="Today - date"
+            android:textSize="24sp" />
+
+
+
+
+        <TextView
+            android:id="@+id/Sunrise"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date"
+            android:layout_alignTop="@+id/date"
+            android:layout_below="@+id/date"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:text="Sunrise" />
+
+
+
+        <TextView
+            android:id="@+id/Sunset"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date"
+            android:layout_below="@+id/date"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:text="Sunset" />
+
+        <TextView
+            android:id="@+id/GoldenHour2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Sunset"
+            android:layout_alignLeft="@+id/Sunset"
+            android:layout_alignStart="@+id/Sunset"
+            android:layout_marginLeft="80dp"
+            android:text="GoldenHourSunSet" />
+
+        <Button
+            android:id="@+id/changeLocation"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Change Location"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/changeDate"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Change Date"
+            android:layout_marginLeft="20dp"
+            android:layout_alignTop="@+id/changeLocation" />
+
+        <TextView
+            android:id="@+id/GoldenHourSunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/Sunrise"
+            android:layout_alignStart="@+id/Sunrise"
+            android:layout_alignTop="@+id/Sunrise"
+            android:layout_marginLeft="80dp"
+            android:text="GoldenHourSunrise" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
+
+</LinearLayout>
