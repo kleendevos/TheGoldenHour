@@ -23,7 +23,9 @@
 
             android:cropToPadding="false"
             android:scaleType="centerCrop"
-            android:src="@drawable/background" />
+            android:src="@drawable/background"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
         <TextClock
             android:id="@+id/textClock"
@@ -76,11 +78,17 @@
             android:textSize="24sp" />
 
 
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/GoldenHourSunrise"
+            android:layout_alignStart="@+id/Sunrise"
+            android:text="Sunrise"
+            android:textSize="10sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/Sunrise"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/date"
             android:layout_alignStart="@+id/date"
@@ -94,7 +102,7 @@
 
         <TextView
             android:id="@+id/Sunset"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/date"
             android:layout_alignStart="@+id/date"
@@ -104,13 +112,23 @@
             android:text="Sunset" />
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Sunset"
+            android:layout_below="@+id/Sunrise"
+            android:text="Sunset"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/GoldenHour2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/Sunset"
             android:layout_alignLeft="@+id/Sunset"
             android:layout_alignStart="@+id/Sunset"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="110dp"
             android:text="GoldenHourSunSet" />
 
         <Button
@@ -140,8 +158,31 @@
             android:layout_alignLeft="@+id/Sunrise"
             android:layout_alignStart="@+id/Sunrise"
             android:layout_alignTop="@+id/Sunrise"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="110dp"
             android:text="GoldenHourSunrise" />
+
+        <TextView
+            android:id="@+id/Golden_Hour_Sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:text="Golden Hour Sunrise"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_above="@+id/GoldenHourSunrise"
+            android:layout_alignStart="@+id/GoldenHourSunrise" />
+
+        <TextView
+            android:id="@+id/Golden_hour_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/GoldenHour2"
+            android:layout_below="@+id/GoldenHourSunrise"
+            android:layout_marginLeft="0dp"
+            android:elevation="14dp"
+            android:text="Golden Hour Sunset"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
